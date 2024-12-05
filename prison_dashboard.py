@@ -163,33 +163,34 @@ def create_sidebar_filters(active_tab):
         ])
     elif active_tab == "spend-analysis-tab":
         return html.Div([
-            dcc.DatePickerRange(id='spend-date-range-picker', start_date=cleaned_data['Ordered.Date'].min(), end_date=cleaned_data['Ordered.Date'].max()),style={
-            'backgroundColor': '#2b2b2b',
-            'color': '#E8D6A7',
-            'border': '1px solid #636EFA',  
-            'borderRadius': '3px',         # Rounded corners
-            'padding': '5px'
-        }),
+            dcc.DatePickerRange(id='spend-date-range-picker', start_date=cleaned_data['Ordered.Date'].min(), end_date=cleaned_data['Ordered.Date'].max(),style={
+                    'backgroundColor': '#2b2b2b',
+                    'color': '#E8D6A7',
+                    'border': '1px solid #636EFA',
+                    'borderRadius': '3px',
+                    'padding': '5px'
+                }
+            ),
 
-            dcc.Dropdown(id='spend-region-dropdown', options=region_options, placeholder="Select Region(s)", multi=True), 
+            dcc.Dropdown(id='spend-region-dropdown', options=region_options, placeholder="Select Region(s)", multi=True, 
         style={
-            'backgroundColor': theme_colors["background"],
-            #"backgroundColor": "#444444",  # Menu background color
-            'color': '#636EFA',
-            'border': '1px solid #636EFA',
-            'borderRadius': '3px',
-            'padding': '5px'
-        }),
+                    'backgroundColor': theme_colors["background"],
+                    'color': '#636EFA',
+                    'border': '1px solid #636EFA',
+                    'borderRadius': '3px',
+                    'padding': '5px'
+                }
+            ),
 
-            dcc.Dropdown(id='spend-vendor-dropdown', options=vendor_options, placeholder="Select Vendor(s)", multi=True), 
+            dcc.Dropdown(id='spend-vendor-dropdown', options=vendor_options, placeholder="Select Vendor(s)", multi=True, 
         style={
-            'backgroundColor': theme_colors["background"],
-            #"backgroundColor": "#444444",  # Menu background color
-            'color': '#636EFA',
-            'border': '1px solid #636EFA',
-            'borderRadius': '3px',
-            'padding': '5px'
-        }),
+                    'backgroundColor': theme_colors["background"],
+                    'color': '#636EFA',
+                    'border': '1px solid #636EFA',
+                    'borderRadius': '3px',
+                    'padding': '5px'
+                }
+            )
         ])
 
     elif active_tab == "vendor-insights-tab":
