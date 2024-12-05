@@ -234,7 +234,7 @@ def create_sidebar_filters(active_tab):
                 'padding': '5px'
             }
         ),
-            dcc.DatePickerRange(id='category-date-range-picker', start_date=cleaned_data['Ordered.Date'].min(), end_date=cleaned_data['Ordered.Date'].max()),
+            dcc.DatePickerRange(id='category-date-range-picker', start_date=cleaned_data['Ordered.Date'].min(), end_date=cleaned_data['Ordered.Date'].max(),
             style={
                 'backgroundColor': '#2b2b2b',
                 'color': '#E8D6A7',
