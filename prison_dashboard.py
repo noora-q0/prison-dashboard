@@ -195,23 +195,70 @@ def create_sidebar_filters(active_tab):
 
     elif active_tab == "vendor-insights-tab":
         return html.Div([
-            dcc.DatePickerRange(id='vendor-insights-date-range-picker', start_date=cleaned_data['Ordered.Date'].min(), end_date=cleaned_data['Ordered.Date'].max()),
-            dcc.Dropdown(id='vendor-insights-vendor-dropdown', options=vendor_options, placeholder="Select Vendor(s)", multi=True),
-        ])
+            dcc.DatePickerRange(id='vendor-insights-date-range-picker', start_date=cleaned_data['Ordered.Date'].min(), end_date=cleaned_data['Ordered.Date'].max(),
+            style={
+                'backgroundColor': '#2b2b2b',
+                'color': '#E8D6A7',
+                'border': '1px solid #636EFA',
+                'borderRadius': '3px',
+                'padding': '5px'
+            }
+        ),
+            dcc.Dropdown(id='vendor-insights-vendor-dropdown', options=vendor_options, placeholder="Select Vendor(s)", multi=True,
+            style={
+                'backgroundColor': theme_colors["background"],
+                'color': '#636EFA',
+                'border': '1px solid #636EFA',
+                'borderRadius': '3px',
+                'padding': '5px'
+            }
+        )
+    ])
     elif active_tab == "category-insights-tab":  # Add filters for Category Insights
         return html.Div([
-            dcc.Dropdown(id='category-vendor-dropdown', options=vendor_options, placeholder="Select Vendor(s)", multi=True),
-            dcc.Dropdown(id='category-procurement-dropdown', options=desc_options, placeholder="Select Procurement Transaction(s)", multi=True),
+            dcc.Dropdown(id='category-vendor-dropdown', options=vendor_options, placeholder="Select Vendor(s)", multi=True,
+            style={
+                'backgroundColor': theme_colors["background"],
+                'color': '#636EFA',
+                'border': '1px solid #636EFA',
+                'borderRadius': '3px',
+                'padding': '5px'
+            }
+        ),
+            dcc.Dropdown(id='category-procurement-dropdown', options=desc_options, placeholder="Select Procurement Transaction(s)", multi=True,
+            style={
+                'backgroundColor': theme_colors["background"],
+                'color': '#636EFA',
+                'border': '1px solid #636EFA',
+                'borderRadius': '3px',
+                'padding': '5px'
+            }
+        ),
             dcc.DatePickerRange(id='category-date-range-picker', start_date=cleaned_data['Ordered.Date'].min(), end_date=cleaned_data['Ordered.Date'].max()),
-        ])
+            style={
+                'backgroundColor': '#2b2b2b',
+                'color': '#E8D6A7',
+                'border': '1px solid #636EFA',
+                'borderRadius': '3px',
+                'padding': '5px'
+            }
+        )
+    ])
     elif active_tab == "prediction-analysis-tab":
         return html.Div([
             dcc.Dropdown(
                 id='prediction-vendor-dropdown',
                 options=vendor_options,
                 placeholder="Select Vendor(s)",
-                multi=True
-            ),
+                multi=True,
+            style={
+                'backgroundColor': theme_colors["background"],
+                'color': '#636EFA',
+                'border': '1px solid #636EFA',
+                'borderRadius': '3px',
+                'padding': '5px'
+            }
+        ),
             dcc.Slider(
                 id="forecast-horizon-slider",
                 min=1,
